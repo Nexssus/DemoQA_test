@@ -69,8 +69,8 @@ describe('tooslQA test', function() {
     })
 
         it("Do the clicks on the shown buttons", async function(){
-        const clickMe = await driver.findElement(By.xpath(
-            '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button'));
+        const clickMe = await driver.findElement(By.xpath
+        ('//div[@class="mt-4" and starts-with(., "Click Me")]'));
         await clickMe.click();
         expect(await driver.findElement(By.id('dynamicClickMessage')).getText()).
         to.eq('You have done a dynamic click');
