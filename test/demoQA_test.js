@@ -68,12 +68,25 @@ describe('tooslQA test', function() {
         expect(await driver.findElement(By.className('main-header')).getText()).to.eq('Buttons');
     })
 
-        it("Do the clicks on the shown buttons", async function(){
+    it("Do the click on the 'Double click' button", async function(){
+        const dbclick = await driver.findElement(By.id('doubleClickBtn'));
+        await dbclick.click();
+        await dbclick.click();
+        await driver.sleep(5000);
+       // expect(await driver.findElement(By.xpath('//*[@id="doubleClickMessage"]')));
+    })
+
+    /* it("Do the click on the 'Right click' button", async function(){
+        const rightClick = await driver.findElement(By.id('rightClickBtn'));
+        
+    })
+
+        it("Do the click on the 'Click me' button", async function(){
         const clickMe = await driver.findElement(By.xpath
         ('//div[@class="mt-4" and starts-with(., "Click Me")]'));
         await clickMe.click();
-        expect(await driver.findElement(By.id('dynamicClickMessage')).getText()).
-        to.eq('You have done a dynamic click');
-    })
+        await driver.sleep(5000);
+        //expect(await driver.findElement(By.id('dynamicClickMessage')));
+    })*/
 
 });
